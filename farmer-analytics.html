@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f6f9fc;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #4caf50;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-icons a {
+      color: white;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .dashboard {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 70px;
+      border-radius: 50%;
+    }
+
+    .shop-name {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .location {
+      font-size: 13px;
+      color: gray;
+    }
+
+    .farmer-menu {
+      list-style: none;
+      padding: 0;
+    }
+
+    .farmer-menu li {
+      margin: 10px 0;
+    }
+
+    .farmer-menu a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .farmer-menu a.active,
+    .farmer-menu a:hover {
+      color: #4caf50;
+    }
+
+    .farmer-menu i {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background: #f6f9fc;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+      <div class="nav-icons">
+        <a href="farmer.html"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-chart-line"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="profile-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="shop-name">Green Valley Farms</div>
+          <div class="location">Bangalore, Karnataka</div>
+        </div>
+
+        <ul class="farmer-menu">
+          <li><a href="farmer.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="farmer-products.html"><i class="fas fa-box"></i> Products</a></li>
+          <li><a href="farmer-orders.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+          <li><a href="farmer-analytics.html" class="active"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+          <li><a href="farmer-settings.html"><i class="fas fa-store"></i> Shop Settings</a></li>
+          <li><a href="farmer-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <h2 class="section-title">Sales Analytics</h2>
+
+        <div class="chart-container">
+          <h3>Monthly Sales</h3>
+          <canvas id="salesChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h3>Top Products</h3>
+          <canvas id="productChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Monthly Sales Chart
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Sales (₹)',
+          data: [1200, 1900, 3000, 2500, 3500, 4200],
+          backgroundColor: 'rgba(76, 175, 80, 0.2)',
+          borderColor: '#4caf50',
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Product Sales Chart
+    const productCtx = document.getElementById('productChart').getContext('2d');
+    new Chart(productCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Tomato', 'Potato', 'Onion', 'Carrot', 'Beans'],
+        datasets: [{
+          label: 'Quantity Sold (kg)',
+          data: [100, 150, 90, 70, 120],
+          backgroundColor: '#4caf50'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

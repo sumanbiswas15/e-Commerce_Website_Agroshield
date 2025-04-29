@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grains & Pulses - AgroShield</title>
+  <link rel="stylesheet" href="grains.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"> <!-- Link to home page -->
+        <img src="./img/arrows.png" alt="Back Button" class="back-button">
+      </a>
+      <img src="./img/logo.png" alt="AgroShield Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, services, and more..." />
+    </div>
+    <div class="nav-icons">
+      <button class="login-btn">Login</button>
+      <a href="cart.html" style="position: relative;">
+        <img src="./img/cart (2).png" alt="Cart" class="nav-icon">
+        <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+      </a>
+      <img src="./img/profile.png" alt="Profile" class="nav-icon">
+    </div>
+  </nav>
+
+  <!-- Grains & Pulses Page -->
+  <section class="grains-page">
+    <h2>Grains & Pulses</h2>
+    <div class="grains-grid">
+      <!-- Basmati Rice Card -->
+      <div class="grain-card">
+        <img src="./img/grains/basmati-rice.jpg" alt="Basmati Rice">
+        <h3>Basmati Rice (Chawal) 🍚</h3>
+        <p class="price">Price Range: ₹80 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg, 10kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Premium quality basmati rice, perfect for biryanis and pulao.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Wheat Card -->
+      <div class="grain-card">
+        <img src="./img/grains/wheat.jpg" alt="Wheat">
+        <h3>Wheat (Gehu) 🌾</h3>
+        <p class="price">Price Range: ₹30 – ₹50 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg, 10kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">High-quality wheat, ideal for making chapatis and bread.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Pearl Millet Card -->
+      <div class="grain-card">
+        <img src="./img/grains/pearl-millet.jpg" alt="Pearl Millet">
+        <h3>Pearl Millet (Bajra) 🌾</h3>
+        <p class="price">Price Range: ₹40 – ₹60 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Nutritious pearl millet, great for making rotis and porridge.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Sorghum Card -->
+      <div class="grain-card">
+        <img src="./img/grains/sorghum.jpg" alt="Sorghum">
+        <h3>Sorghum (Jowar) 🌾</h3>
+        <p class="price">Price Range: ₹35 – ₹55 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Healthy sorghum, perfect for making rotis and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Maize Card -->
+      <div class="grain-card">
+        <img src="./img/grains/maize.jpg" alt="Maize">
+        <h3>Maize (Makka) 🌽</h3>
+        <p class="price">Price Range: ₹25 – ₹50 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Fresh maize, ideal for making cornflakes and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Chickpeas Card -->
+      <div class="grain-card">
+        <img src="./img/grains/chickpeas.jpg" alt="Chickpeas">
+        <h3>Chickpeas (Chana Dal) 🫘</h3>
+        <p class="price">Price Range: ₹70 – ₹100 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Protein-rich chickpeas, perfect for curries and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Green Gram Card -->
+      <div class="grain-card">
+        <img src="./img/grains/green-gram.jpg" alt="Green Gram">
+        <h3>Green Gram (Moong Dal) 🫘</h3>
+        <p class="price">Price Range: ₹100 – ₹140 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Healthy green gram, great for soups and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Black Gram Card -->
+      <div class="grain-card">
+        <img src="./img/grains/black-gram.jpg" alt="Black Gram">
+        <h3>Black Gram (Urad Dal) 🫘</h3>
+        <p class="price">Price Range: ₹110 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Nutritious black gram, perfect for dosas and idlis.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Red Lentils Card -->
+      <div class="grain-card">
+        <img src="./img/grains/red-lentils.jpg" alt="Red Lentils">
+        <h3>Red Lentils (Masoor Dal) 🫘</h3>
+        <p class="price">Price Range: ₹90 – ₹130 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Delicious red lentils, great for soups and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Pigeon Pea Card -->
+      <div class="grain-card">
+        <img src="./img/grains/pigeon-pea.jpg" alt="Pigeon Pea">
+        <h3>Pigeon Pea (Toor Dal / Arhar Dal) 🫘</h3>
+        <p class="price">Price Range: ₹110 – ₹160 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Protein-rich pigeon pea, perfect for dal and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Kidney Beans Card -->
+      <div class="grain-card">
+        <img src="./img/grains/kidney-beans.jpg" alt="Kidney Beans">
+        <h3>Kidney Beans (Rajma) 🫘</h3>
+        <p class="price">Price Range: ₹120 – ₹170 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Nutritious kidney beans, great for rajma curry.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Black Eyed Peas Card -->
+      <div class="grain-card">
+        <img src="./img/grains/black-eyed-peas.jpg" alt="Black Eyed Peas">
+        <h3>Black Eyed Peas (Lobia) 🫘</h3>
+        <p class="price">Price Range: ₹80 – ₹120 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Healthy black-eyed peas, perfect for curries and salads.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Horse Gram Card -->
+      <div class="grain-card">
+        <img src="./img/grains/horse-gram.jpg" alt="Horse Gram">
+        <h3>Horse Gram (Kulthi Dal) 🫘</h3>
+        <p class="price">Price Range: ₹70 – ₹100 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Nutritious horse gram, great for soups and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Barley Card -->
+      <div class="grain-card">
+        <img src="./img/grains/barley.jpg" alt="Barley">
+        <h3>Barley (Jau) 🌾</h3>
+        <p class="price">Price Range: ₹30 – ₹50 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Healthy barley, perfect for soups and porridge.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Finger Millet Card -->
+      <div class="grain-card">
+        <img src="./img/grains/finger-millet.jpg" alt="Finger Millet">
+        <h3>Finger Millet (Ragi) 🌾</h3>
+        <p class="price">Price Range: ₹40 – ₹70 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 5kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Nutritious finger millet, great for making rotis and porridge.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>
+        <!-- Logos Row -->
+        <div class="logo-row">
+          <img src="./img/facebook.png" alt="facebook">
+          <img src="./img/social.png" alt="instagram">
+          <img src="./img/twitter.png" alt="twitter">
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="/media">Media Coverage</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

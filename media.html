@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Coverage - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f8f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .media-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .media-card {
+      background: #fff;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .media-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .media-title {
+      font-size: 22px;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    .media-date {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .media-description {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+   /* Footer Section */
+.footer {
+    background-color: #2c3e50; /* Dark background color */
+    color: white; /* Text color */
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Space out the sections */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    gap: 20px; /* Add gap between sections */
+  }
+  
+  .footer-section {
+    flex: 1 1 30%; /* Each section takes 30% of the width */
+    min-width: 250px; /* Minimum width for responsiveness */
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green color for headings */
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #4CAF50; /* Green color on hover */
+  }
+  
+  /* Logo Row */
+  .logo-row {
+    display: flex;
+    gap: 15px; /* Space between logos */
+    margin-top: 20px; /* Add space above the logos */
+  }
+  
+  .logo-row img {
+    width: 40px; /* Adjust logo size */
+    height: 40px; /* Adjust logo size */
+    object-fit: contain; /* Ensure logos fit properly */
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-row img:hover {
+    transform: scale(1.1); /* Slightly enlarge logos on hover */
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Media Coverage</h1>
+  </header>
+
+  <div class="media-container">
+    <div class="media-card">
+      <div class="media-title">AgroShield Featured in The Times of India</div>
+      <div class="media-date">March 2025</div>
+      <div class="media-description">
+        AgroShield was highlighted for its contribution to sustainable farming and helping farmers market their products digitally.
+      </div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-title">Awarded Best AgriTech Startup - 2024</div>
+      <div class="media-date">December 2024</div>
+      <div class="media-description">
+        Recognized for innovation in AI-powered crop health monitoring and direct-to-consumer farm produce delivery models.
+      </div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-title">Coverage on DD Kisan Channel</div>
+      <div class="media-date">November 2024</div>
+      <div class="media-description">
+        A special feature aired on DD Kisan shared insights about AgroShield’s impact on smallholder farmers in Andhra Pradesh.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>      
+        <div class="logo-row">
+          <a href="https://facebook.com/agroshield" target="_blank"><img src="./img/facebook.png" alt="Facebook"></a>
+          <a href="https://instagram.com/agroshield" target="_blank"><img src="./img/social.png" alt="Instagram"></a>
+          <a href="https://twitter.com/agroshield" target="_blank"><img src="./img/twitter.png" alt="Twitter"></a>
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="media.html">Media Coverage</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

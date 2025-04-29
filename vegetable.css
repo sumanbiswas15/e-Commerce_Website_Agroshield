@@ -1,0 +1,281 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  h1, h2, h3 {
+    color: #4CAF50; /* Green color for headings */
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  /* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space out logo, search bar, and icons */
+    align-items: center; /* Vertically center items */
+    background-color:#4CAF50; /* White background */
+    padding: 10px 20px; /* Add padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky; /* Make navbar sticky */
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+  }
+  
+  /* Logo and Back Button */
+  .navbar .logo {
+    display: flex;
+    align-items: center; /* Align logo and back button vertically */
+    gap: 10px; /* Space between back button and logo */
+  }
+  
+  .navbar .logo .back-button {
+    width: 30px; /* Set back button size */
+    height: 30px; /* Set back button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar .logo .back-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  .navbar .logo img {
+    height: 50px; /* Set logo height */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Search Bar */
+  .navbar .search-bar {
+    flex: 1; /* Take up remaining space */
+    margin: 0 20px; /* Add margin on sides */
+    max-width: 600px; /* Limit search bar width */
+  }
+  
+  .navbar .search-bar input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1rem;
+    outline: none; /* Remove outline */
+    transition: border-color 0.3s ease;
+  }
+  
+  .navbar .search-bar input:focus {
+    border-color: #4CAF50; /* Green border on focus */
+  }
+  
+  /* Nav Icons */
+  .navbar .nav-icons {
+    display: flex;
+    align-items: center; /* Vertically center icons */
+    gap: 15px; /* Space between icons */
+  }
+  
+  .navbar .nav-icons .login-btn {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .nav-icons .login-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .navbar .nav-icons img {
+    width: 30px; /* Set icon size */
+    height: 30px; /* Set icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar .nav-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  /* Vegetables Page */
+  .vegetables-page {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text color */
+    text-align: center;
+  }
+  
+  .vegetables-page h2 {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Green color for headings */
+    margin-bottom: 40px;
+  }
+  
+  .vegetables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .vegetable-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .vegetable-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .vegetable-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .vegetable-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50; /* Dark text color for headings */
+    margin-bottom: 10px;
+  }
+  
+  .vegetable-card .price {
+    font-size: 1.1rem;
+    color: #4CAF50; /* Green color for price */
+    margin-bottom: 10px;
+  }
+  
+  .vegetable-card .quantity {
+    font-size: 1rem;
+    color: #555; /* Dark gray for text */
+    margin-bottom: 10px;
+  }
+  
+  .vegetable-card .rating {
+    font-size: 1rem;
+    color: #f39c12; /* Orange color for ratings */
+    margin-bottom: 10px;
+  }
+  
+  .vegetable-card .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555; /* Dark gray for text */
+    margin-bottom: 20px;
+  }
+  
+  .vegetable-card .add-to-cart {
+    width: 100%;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .vegetable-card .add-to-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #2c3e50; /* Dark background color */
+    color: white; /* Text color */
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Space out the sections */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    gap: 20px; /* Add gap between sections */
+  }
+  
+  .footer-section {
+    flex: 1 1 30%; /* Each section takes 30% of the width */
+    min-width: 250px; /* Minimum width for responsiveness */
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green color for headings */
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #4CAF50; /* Green color on hover */
+  }
+  
+  /* Logo Row */
+  .logo-row {
+    display: flex;
+    gap: 15px; /* Space between logos */
+    margin-top: 20px; /* Add space above the logos */
+  }
+  
+  .logo-row img {
+    width: 40px; /* Adjust logo size */
+    height: 40px; /* Adjust logo size */
+    object-fit: contain; /* Ensure logos fit properly */
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-row img:hover {
+    transform: scale(1.1); /* Slightly enlarge logos on hover */
+  }

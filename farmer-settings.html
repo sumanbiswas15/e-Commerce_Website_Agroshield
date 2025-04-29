@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Settings - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f6f9fc;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #4caf50;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-icons a {
+      color: white;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .dashboard {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 70px;
+      border-radius: 50%;
+    }
+
+    .shop-name {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .location {
+      font-size: 13px;
+      color: gray;
+    }
+
+    .farmer-menu {
+      list-style: none;
+      padding: 0;
+    }
+
+    .farmer-menu li {
+      margin: 10px 0;
+    }
+
+    .farmer-menu a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .farmer-menu a.active,
+    .farmer-menu a:hover {
+      color: #4caf50;
+    }
+
+    .farmer-menu i {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background: #f6f9fc;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .settings-form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #4caf50;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #4caf50;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #43a047;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+      <div class="nav-icons">
+        <a href="farmer.html"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-chart-line"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="profile-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="shop-name">Green Valley Farms</div>
+          <div class="location">Bangalore, Karnataka</div>
+        </div>
+
+        <ul class="farmer-menu">
+          <li><a href="farmer.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="farmer-products.html"><i class="fas fa-box"></i> Products</a></li>
+          <li><a href="farmer-orders.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+          <li><a href="farmer-analytics.html"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+          <li><a href="farmer-settings.html" class="active"><i class="fas fa-store"></i> Shop Settings</a></li>
+          <li><a href="farmer-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <h2 class="section-title">Shop Settings</h2>
+        <form class="settings-form" id="settingsForm">
+          <div class="form-group">
+            <label class="form-label">Shop Name</label>
+            <input type="text" class="form-input" id="shopName" value="Green Valley Farms" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Owner Name</label>
+            <input type="text" class="form-input" id="ownerName" value="Ravi Kumar" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" id="email" value="greenvalley@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" id="phone" value="9876543210" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address</label>
+            <textarea class="form-input" id="address" rows="3" required>Bangalore, Karnataka</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <div class="success-message" id="successMessage" style="display:none;">
+            Settings updated successfully!
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('settingsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulate saving settings
+      document.getElementById('successMessage').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

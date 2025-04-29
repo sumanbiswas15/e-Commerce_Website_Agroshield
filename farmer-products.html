@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Products - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f5f7fa;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      width: 40px;
+    }
+
+    .nav-icons a {
+      color: white;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .dashboard {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: white;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .shop-name {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .location {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .farmer-menu {
+      list-style: none;
+    }
+
+    .farmer-menu li {
+      margin: 15px 0;
+    }
+
+    .farmer-menu a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .farmer-menu a.active, .farmer-menu a:hover {
+      background-color: #e0f2f1;
+      color: #4caf50;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .products-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .products-table th, .products-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .organic-badge {
+      background-color: #c8e6c9;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      color: #2e7d32;
+    }
+
+    .inorganic-badge {
+      background-color: #ffe0b2;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      color: #ef6c00;
+    }
+
+    .status-badge {
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      color: white;
+    }
+
+    .status-badge.active {
+      background-color: #4caf50;
+    }
+
+    .product-actions button {
+      margin-right: 5px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background-color: #2196f3;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .product-form-container {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-label {
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-input, .form-input:focus {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #4caf50;
+      border: 1px solid #4caf50;
+    }
+
+    .btn-outline:hover {
+      background: rgba(76, 175, 80, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo"/>
+      <div class="nav-icons">
+        <a href="farmer.html"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-chart-line"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="profile-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Profile Picture" class="profile-pic"/>
+          <div class="shop-name">Green Valley Farms</div>
+          <div class="location">Bangalore, Karnataka</div>
+        </div>
+        
+        <ul class="farmer-menu">
+          <li><a href="farmer.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="farmer-products.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+          <li><a href="farmer-orders.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+          <li><a href="farmer-analytics.html"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+          <li><a href="farmer-settings.html"><i class="fas fa-store"></i> Shop Settings</a></li>
+          <li><a href="farmer-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div class="products-header">
+          <h2 class="section-title">Your Products</h2>
+          <button class="btn btn-primary" id="showAddProductForm">Add Product</button>
+        </div>
+
+        <table class="products-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <!-- Products will be rendered here -->
+          </tbody>
+        </table>
+
+        <div class="product-form-container" id="productFormContainer">
+          <h3 class="section-title">Add New Product</h3>
+          <form id="productForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-input" id="productName" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-input" id="productCategory" required>
+                  <option value="">Select Category</option>
+                  <option value="organic">Organic</option>
+                  <option value="inorganic">Inorganic</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Price (₹)</label>
+                <input type="number" class="form-input" id="productPrice" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Quantity Available</label>
+                <input type="text" class="form-input" id="productQuantity" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-input" id="productDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Product Image</label>
+              <input type="file" class="form-input" id="productImage">
+            </div>
+            <div class="form-footer">
+              <button type="button" class="btn btn-outline" id="cancelAddProduct">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const products = [
+        {
+          id: 1,
+          name: 'Tomato',
+          category: 'organic',
+          price: 60,
+          quantity: '50kg',
+          description: 'Fresh organic tomatoes',
+          image: 'https://cdn-icons-png.flaticon.com/512/740/740922.png',
+          status: 'active'
+        },
+        {
+          id: 2,
+          name: 'Potato',
+          category: 'inorganic',
+          price: 40,
+          quantity: '80kg',
+          description: 'Fresh potatoes',
+          image: 'https://cdn-icons-png.flaticon.com/512/2909/2909896.png',
+          status: 'active'
+        }
+      ];
+
+      const productsTableBody = document.getElementById('productsTableBody');
+      const productFormContainer = document.getElementById('productFormContainer');
+      const showAddProductFormBtn = document.getElementById('showAddProductForm');
+      const cancelAddProductBtn = document.getElementById('cancelAddProduct');
+      const productForm = document.getElementById('productForm');
+
+      function loadProducts() {
+        productsTableBody.innerHTML = '';
+        products.forEach(product => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td><div style="display: flex; align-items: center; gap: 10px;">
+              <img src="${product.image}" alt="${product.name}" class="product-img">
+              <span>${product.name}</span>
+            </div></td>
+            <td><span class="${product.category}-badge">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</span></td>
+            <td>₹${product.price}/kg</td>
+            <td>${product.quantity}</td>
+            <td><span class="status-badge ${product.status}">${product.status}</span></td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          `;
+          productsTableBody.appendChild(row);
+        });
+      }
+
+      showAddProductFormBtn.addEventListener('click', () => {
+        productFormContainer.style.display = 'block';
+      });
+
+      cancelAddProductBtn.addEventListener('click', () => {
+        productForm.reset();
+        productFormContainer.style.display = 'none';
+      });
+
+      productForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const newProduct = {
+          id: products.length + 1,
+          name: document.getElementById('productName').value,
+          category: document.getElementById('productCategory').value,
+          price: document.getElementById('productPrice').value,
+          quantity: document.getElementById('productQuantity').value,
+          description: document.getElementById('productDescription').value,
+          image: 'https://cdn-icons-png.flaticon.com/512/740/740922.png',
+          status: 'active'
+        };
+        products.push(newProduct);
+        loadProducts();
+        productForm.reset();
+        productFormContainer.style.display = 'none';
+        alert('Product added successfully!');
+      });
+
+      loadProducts();
+    });
+  </script>
+</body>
+</html>

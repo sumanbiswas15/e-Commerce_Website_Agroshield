@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --primary-dark: #3d8b40;
+      --error: #dc3545;
+      --secondary: #6c757d;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --farmer: #5cb85c;
+      --customer: #5bc0de;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-y: auto;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      margin: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 24px;
+    }
+    
+    .user-type-selector {
+      display: flex;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .user-type {
+      flex: 1;
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    .user-type input {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    .user-type-label {
+      display: block;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    .user-type input:checked + .user-type-label {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .farmer-option {
+      background: rgba(92, 184, 92, 0.1);
+      color: var(--farmer);
+    }
+    
+    .customer-option {
+      background: rgba(91, 192, 222, 0.1);
+      color: var(--customer);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+    
+    .error {
+      color: var(--error);
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    input.invalid {
+      border-color: var(--error);
+    }
+    
+    .signup-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .signup-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .terms {
+      margin: 15px 0;
+      color: var(--secondary);
+      font-size: 12px;
+    }
+    
+    .login-link {
+      color: var(--secondary);
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .password-rules {
+      text-align: left;
+      font-size: 12px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+    
+    .password-rules ul {
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+    
+    .floating-leaves {
+      position: absolute;
+      width: 100px;
+      opacity: 0.7;
+      animation: float 15s infinite linear;
+      z-index: -1;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    @media (max-width: 480px) {
+      .signup-container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://cdn-icons-png.flaticon.com/512/2828/2828910.png" alt="Leaf" class="floating-leaves" style="top: 10%; left: 5%;">
+  <img src="https://cdn-icons-png.flaticon.com/512/2828/2828910.png" alt="Leaf" class="floating-leaves" style="bottom: 15%; right: 8%; animation-delay: 3s;">
+  
+  <div class="signup-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+    <h1>Create Your Account</h1>
+    
+    <div class="user-type-selector">
+      <div class="user-type farmer-option">
+        <input type="radio" id="farmer" name="userType" value="farmer" checked>
+        <label for="farmer" class="user-type-label">
+          <i class="fas fa-tractor"></i> Farmer
+        </label>
+      </div>
+      <div class="user-type customer-option">
+        <input type="radio" id="customer" name="userType" value="customer">
+        <label for="customer" class="user-type-label">
+          <i class="fas fa-shopping-basket"></i> Customer
+        </label>
+      </div>
+    </div>
+    
+    <form id="signupForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Letters only, no numbers" required>
+        <div class="error" id="username-error">Username must contain only letters</div>
+      </div>
+      
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter a valid email" required>
+        <div class="error" id="email-error">Please enter a valid email address</div>
+      </div>
+      
+      <div class="input-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="10 digit number" required>
+        <div class="error" id="phone-error">Phone must be 10 digits (numbers only)</div>
+      </div>
+      
+      <div class="password-rules">
+        <label>Password Requirements:</label>
+        <ul>
+          <li>At least 8 characters</li>
+          <li>At least one uppercase letter</li>
+          <li>At least one number</li>
+          <li>At least one special character (!@#$%^&*)</li>
+        </ul>
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a strong password" required>
+        <div class="error" id="password-error">Password doesn't meet requirements</div>
+      </div>
+      
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+        <div class="error" id="confirm-error">Passwords don't match</div>
+      </div>
+      
+      <button type="submit" class="signup-btn">Sign Up</button>
+      
+      <p class="terms">By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+    </form>
+    
+    <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // DOM Elements
+      const form = document.getElementById('signupForm');
+      const username = document.getElementById('username');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+  
+      // Regular Expressions
+      const usernameRegex = /^[A-Za-z]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\d{10}$/;
+      const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+  
+      // Validation Functions
+      function validateUsername() {
+        const isValid = usernameRegex.test(username.value);
+        toggleError('username-error', !isValid, username);
+        return isValid;
+      }
+  
+      function validateEmail() {
+        const isValid = emailRegex.test(email.value);
+        toggleError('email-error', !isValid, email);
+        return isValid;
+      }
+  
+      function validatePhone() {
+        const isValid = phoneRegex.test(phone.value);
+        toggleError('phone-error', !isValid, phone);
+        return isValid;
+      }
+  
+      function validatePassword() {
+        const isValid = passwordRegex.test(password.value);
+        toggleError('password-error', !isValid, password);
+        return isValid;
+      }
+  
+      function validateConfirmPassword() {
+        const isValid = password.value === confirmPassword.value;
+        toggleError('confirm-error', !isValid, confirmPassword);
+        return isValid;
+      }
+  
+      function toggleError(errorId, show, inputElement) {
+        const errorElement = document.getElementById(errorId);
+        if (show) {
+          errorElement.style.display = 'block';
+          inputElement.classList.add('invalid');
+        } else {
+          errorElement.style.display = 'none';
+          inputElement.classList.remove('invalid');
+        }
+      }
+  
+      // Real-time Validation
+      username.addEventListener('input', validateUsername);
+      email.addEventListener('input', validateEmail);
+      phone.addEventListener('input', validatePhone);
+      password.addEventListener('input', validatePassword);
+      confirmPassword.addEventListener('input', validateConfirmPassword);
+  
+      // Form Submission
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+  
+        const isUsernameValid = validateUsername();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isPasswordValid = validatePassword();
+        const isConfirmValid = validateConfirmPassword();
+  
+        if (isUsernameValid && isEmailValid && isPhoneValid &&
+          isPasswordValid && isConfirmValid) {
+  
+          const userType = document.querySelector('input[name="userType"]:checked').value;
+  
+          const userData = {
+            username: username.value,
+            email: email.value,
+            phone: phone.value,
+            password: password.value,
+            userType: userType,
+            createdAt: new Date().toISOString()
+          };
+  
+          if (isEmailAlreadyRegistered(email.value)) {
+            alert('This email is already registered. Please use a different email or login.');
+            return;
+          }
+  
+          saveUserData(userData);
+  
+          alert('Account created successfully! Please login to continue.');
+          window.location.href = 'login.html';
+        } else {
+          alert('Please fix the errors in the form before submitting.');
+        }
+      });
+  
+      // Helper Functions
+      function isEmailAlreadyRegistered(email) {
+        const users = JSON.parse(localStorage.getItem('agroshieldUsers')) || [];
+        return users.some(user => user.email === email);
+      }
+  
+      function saveUserData(userData) {
+        let users = JSON.parse(localStorage.getItem('agroshieldUsers')) || [];
+        users.push(userData);
+        localStorage.setItem('agroshieldUsers', JSON.stringify(users));
+      }
+  
+      function initForm() {
+        document.querySelectorAll('.error').forEach(el => {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('input').forEach(el => {
+          el.classList.remove('invalid');
+        });
+      }
+  
+      initForm();
+    });
+  </script>  
+</body>
+</html>

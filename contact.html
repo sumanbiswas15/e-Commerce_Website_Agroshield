@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f8f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .success-message {
+      background-color: #dff0d8;
+      color: #3c763d;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+   /* Footer Section */
+.footer {
+    background-color: #2c3e50; /* Dark background color */
+    color: white; /* Text color */
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Space out the sections */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    gap: 20px; /* Add gap between sections */
+  }
+  
+  .footer-section {
+    flex: 1 1 30%; /* Each section takes 30% of the width */
+    min-width: 250px; /* Minimum width for responsiveness */
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green color for headings */
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #4CAF50; /* Green color on hover */
+  }
+  
+  /* Logo Row */
+  .logo-row {
+    display: flex;
+    gap: 15px; /* Space between logos */
+    margin-top: 20px; /* Add space above the logos */
+  }
+  
+  .logo-row img {
+    width: 40px; /* Adjust logo size */
+    height: 40px; /* Adjust logo size */
+    object-fit: contain; /* Ensure logos fit properly */
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-row img:hover {
+    transform: scale(1.1); /* Slightly enlarge logos on hover */
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact AgroShield</h1>
+  </header>
+
+  <div class="contact-container">
+    <form id="contact-form">
+      <div class="success-message" id="success">Thanks for reaching out! We'll get back to you soon.</div>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>
+        <div class="logo-row">
+          <a href="https://facebook.com/agroshield" target="_blank"><img src="./img/facebook.png" alt="Facebook"></a>
+          <a href="https://instagram.com/agroshield" target="_blank"><img src="./img/social.png" alt="Instagram"></a>
+          <a href="https://twitter.com/agroshield" target="_blank"><img src="./img/twitter.png" alt="Twitter"></a>
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="media.html">Media Coverage</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form feedback simulation
+    const form = document.getElementById("contact-form");
+    const successMsg = document.getElementById("success");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      successMsg.style.display = "block";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

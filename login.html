@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --primary-dark: #3d8b40;
+      --secondary: #6c757d;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --google: #DB4437;
+      --facebook: #4267B2;
+      --twitter: #1DA1F2;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      width: 420px;
+      padding: 40px 50px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .login-container::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .logo:hover {
+      transform: scale(1.05) rotate(-5deg);
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 28px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      text-align: left;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s;
+      background-color: #f8f9fa;
+    }
+    
+    input::placeholder {
+      color: #adb5bd;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+      background-color: white;
+    }
+    
+    .input-icon {
+      position: absolute;
+      right: 15px;
+      top: 40px;
+      color: var(--secondary);
+      font-size: 18px;
+    }
+
+    .login-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 0;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .login-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+    
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    .forgot-password {
+      display: block;
+      margin-top: 15px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .forgot-password:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .divider {
+      margin: 30px 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #dee2e6, transparent);
+      position: relative;
+    }
+
+    .divider::after {
+      content: "or continue with";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 0 15px;
+      color: var(--secondary);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-icon i {
+      transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .social-icon:hover i {
+      transform: scale(1.1);
+    }
+
+    .google {
+      background: var(--google);
+    }
+
+    .facebook {
+      background: var(--facebook);
+    }
+
+    .twitter {
+      background: var(--twitter);
+    }
+
+    .signup-link {
+      color: var(--secondary);
+      margin-top: 25px;
+      font-size: 15px;
+    }
+
+    .signup-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .signup-link a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    .signup-link a:hover {
+      color: var(--primary-dark);
+    }
+    
+    .signup-link a:hover::after {
+      width: 100%;
+    }
+    
+    .floating-leaves {
+      position: absolute;
+      width: 100px;
+      opacity: 0.7;
+      animation: float 15s infinite linear;
+      z-index: -1;
+    }
+    
+    .leaf-1 {
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+    
+    .leaf-2 {
+      bottom: 15%;
+      right: 8%;
+      animation-delay: 3s;
+    }
+    
+    .leaf-3 {
+      top: 30%;
+      right: 5%;
+      animation-delay: 6s;
+    }
+    /* Logo Row */
+    .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between logos */
+    margin-top: 20px; /* Add space above the logos */
+    }
+
+    .logo-row img {
+    width: 40px; /* Adjust logo size */
+    height: 40px; /* Adjust logo size */
+    object-fit: contain; /* Ensure logos fit properly */
+    transition: transform 0.3s ease;
+    }
+
+    .logo-row img:hover {
+    transform: scale(1.1); /* Slightly enlarge logos on hover */
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    @media (max-width: 480px) {
+      .login-container {
+        width: 90%;
+        padding: 30px;
+      }
+      
+      .floating-leaves {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://cdn-icons-png.flaticon.com/512/2828/2828910.png" alt="Leaf" class="floating-leaves leaf-1">
+  <img src="https://cdn-icons-png.flaticon.com/512/2828/2828910.png" alt="Leaf" class="floating-leaves leaf-2">
+  <img src="https://cdn-icons-png.flaticon.com/512/2828/2828910.png" alt="Leaf" class="floating-leaves leaf-3">
+  
+  <div class="login-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+    <h1>Welcome Back</h1>
+    
+    <form>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <span class="input-icon"><i class="fas fa-lock"></i></span>
+      </div>
+      
+      <button type="submit" class="login-btn">Sign In</button>
+      <a href="#" class="forgot-password">Forgot your password?</a>
+    </form>
+    
+    <div class="divider"></div>
+    
+    <div class="logo-row">
+      <a href="https://www.google.com" target="_blank">
+        <img src="./img/search.png" alt="Google">
+      </a>
+      <a href="https://www.instagram.com/agroshield" target="_blank">
+        <img src="./img/social.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/agroshield" target="_blank">
+        <img src="./img/facebook.png" alt="Facebook">
+      </a>
+    </div>
+    
+    <p class="signup-link">Don't have an account? <a href="signup.html">Sign up now</a></p>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.querySelector('form');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+  
+      // Animation for form elements
+      const elements = document.querySelectorAll('.input-group, .login-btn, .social-login, .signup-link');
+      elements.forEach((el, index) => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.animation = `fadeInUp 0.5s ease-out forwards ${index * 0.1 + 0.3}s`;
+      });
+  
+      // Inject animation keyframes
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+  
+      // Handle login form submit
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+  
+        const email = emailInput.value;
+        const password = passwordInput.value;
+  
+        const user = authenticateUser(email, password);
+  
+        if (user) {
+          setCurrentUser(user.email, user.userType);
+          redirectUser(user.userType);
+        } else {
+          alert('Invalid email or password. Please try again.');
+        }
+      });
+  
+      // Check if user exists and password matches
+      function authenticateUser(email, password) {
+        const users = JSON.parse(localStorage.getItem('agroshieldUsers')) || [];
+        return users.find(user => user.email === email && user.password === password);
+      }
+  
+      // Set current logged in user
+      function setCurrentUser(email, userType) {
+        localStorage.setItem('currentUser', JSON.stringify({
+          email: email,
+          userType: userType,
+          loggedIn: true,
+          lastLogin: new Date().toISOString()
+        }));
+      }
+  
+      // Redirect based on user type (updated)
+      function redirectUser(userType) {
+        if (userType === 'farmer') {
+          window.location.href = 'farmer.html';
+        } else {
+          window.location.href = 'index.html'; // Updated from index.html
+        }
+      }
+  
+      // Auto-redirect if already logged in (updated)
+      function checkLoggedIn() {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.loggedIn) {
+          redirectUser(currentUser.userType);
+        }
+      }
+  
+      checkLoggedIn();
+    });
+  </script>    
+</body>
+</html>

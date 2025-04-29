@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegetables - AgroShield</title>
+  <link rel="stylesheet" href="vegetable.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"> <!-- Link to home page -->
+        <img src="./img/arrows.png" alt="Back Button" class="back-button">
+      </a>
+      <img src="./img/logo.png" alt="AgroShield Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, services, and more..." />
+    </div>
+    <div class="nav-icons">
+      <button class="login-btn">Login</button>
+      <a href="cart.html" style="position: relative;">
+        <img src="./img/cart (2).png" alt="Cart" class="nav-icon">
+        <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+      </a>
+      <img src="./img/profile.png" alt="Profile" class="nav-icon">
+    </div>
+  </nav>
+
+  <!-- Vegetables Page -->
+  <section class="vegetables-page">
+    <h2>Fresh Vegetables</h2>
+    <div class="vegetables-grid">
+      <!-- Tomato Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Tomato.jpg" alt="Tomato">
+        <h3>Tomato (Tamatar) 🍅</h3>
+        <p class="price">Price Range: ₹30 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Tomatoes are rich in vitamins and antioxidants. They are perfect for salads, curries, and sauces.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Potato Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Potato.jpg" alt="Potato">
+        <h3>Potato (Aloo) 🥔</h3>
+        <p class="price">Price Range: ₹20 – ₹40 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 2kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Potatoes are versatile and can be used in a variety of dishes, from fries to curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Onion Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Onion.jpg" alt="Onion">
+        <h3>Onion (Pyaaz) 🧅</h3>
+        <p class="price">Price Range: ₹30 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 1kg, 2kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Onions are a staple in Indian cooking, adding flavor to almost every dish.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Brinjal Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Brinjal.jpg" alt="Brinjal">
+        <h3>Brinjal (Baingan) 🍆</h3>
+        <p class="price">Price Range: ₹40 – ₹60 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Brinjals are rich in fiber and antioxidants, perfect for curries and stir-fries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Cabbage Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Cabbage.jpg" alt="Cabbage">
+        <h3>Cabbage (Patta Gobhi) 🥬</h3>
+        <p class="price">Price Range: ₹20 – ₹50 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole cabbage</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Cabbage is great for salads, soups, and stir-fries, and is rich in vitamins.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Add more vegetable cards here -->
+        <!-- Cauliflower Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Cauliflower.jpg" alt="Cauliflower">
+        <h3>Cauliflower (Phool Gobhi) 🌸</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole cauliflower</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Cauliflower is versatile and can be used in curries, stir-fries, and even as a low-carb substitute.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Carrot Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Carrot.jpg" alt="Carrot">
+        <h3>Carrot (Gajar) 🥕</h3>
+        <p class="price">Price Range: ₹30 – ₹70 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Carrots are rich in beta-carotene and are great for salads, juices, and soups.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Green Peas Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Green Peas.jpg" alt="Green Peas">
+        <h3>Green Peas (Matar) 🌿</h3>
+        <p class="price">Price Range: ₹80 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Green peas are a great source of protein and fiber, perfect for curries and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Spinach Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Spinach.jpg" alt="Spinach">
+        <h3>Spinach (Palak) 🌱</h3>
+        <p class="price">Price Range: ₹20 – ₹40 per bunch</p>
+        <p class="quantity">Typical Quantities: 250g, 500g</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Spinach is rich in iron and vitamins, perfect for salads, soups, and smoothies.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Bitter Gourd Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Bitter Gourd.jpg" alt="Bitter Gourd">
+        <h3>Bitter Gourd (Karela) 🥒</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Bitter gourd is known for its health benefits, especially for managing blood sugar levels.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Ridge Gourd Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Ridge Gourd.jpg" alt="Ridge Gourd">
+        <h3>Ridge Gourd (Turai) 🍃</h3>
+        <p class="price">Price Range: ₹30 – ₹60 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Ridge gourd is low in calories and rich in fiber, perfect for curries and stir-fries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Lady Finger Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Lady Finger.jpg" alt="Lady Finger">
+        <h3>Lady Finger (Bhindi) 🌿</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Lady finger is rich in fiber and vitamins, perfect for stir-fries and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Bottle Gourd Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Bottle Gourd.jpg" alt="Bottle Gourd">
+        <h3>Bottle Gourd (Lauki) 🎋</h3>
+        <p class="price">Price Range: ₹20 – ₹50 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole gourd</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Bottle gourd is low in calories and rich in water content, perfect for soups and curries.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Radish Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Radish.jpg" alt="Radish">
+        <h3>Radish (Mooli) 🌱</h3>
+        <p class="price">Price Range: ₹20 – ₹50 per bunch</p>
+        <p class="quantity">Typical Quantities: 250g, 500g</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Radish is rich in vitamins and minerals, perfect for salads and pickles.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Green Chilies Card -->
+      <div class="vegetable-card">
+        <img src="./img/vegetable/Green Chilies.jpg" alt="Green Chilies">
+        <h3>Green Chilies (Hari Mirch) 🌶</h3>
+        <p class="price">Price Range: ₹40 – ₹100 per kg</p>
+        <p class="quantity">Typical Quantities: 100g, 250g</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Green chilies add a spicy kick to dishes and are rich in vitamin C.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>
+        <!-- Logos Row -->
+        <div class="logo-row">
+          <img src="./img/facebook.png" alt="facebook">
+          <img src="./img/social.png" alt="instagram">
+          <img src="./img/twitter.png" alt="twitter">
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="/media">Media Coverage</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

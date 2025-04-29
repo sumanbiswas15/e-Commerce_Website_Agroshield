@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --primary-dark: #3d8b40;
+      --light: #f8f9fa;
+      --dark: #333;
+      --gray: #666;
+      --light-gray: #eee;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-icons a {
+      color: var(--dark);
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .sidebar {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .shop-name {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .farmer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .farmer-menu li {
+      margin-bottom: 8px;
+    }
+
+    .farmer-menu a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: var(--dark);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+
+    .farmer-menu a:hover, .farmer-menu a.active {
+      background-color: rgba(76, 175, 80, 0.1);
+      color: var(--primary);
+    }
+
+    .farmer-menu i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .main-content {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--light-gray);
+      font-weight: 600;
+    }
+
+    .stats-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .products-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .products-table th {
+      text-align: left;
+      padding: 12px 15px;
+      background: var(--light);
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .products-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 14px;
+    }
+
+    .product-img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .add-product-form {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var(--light-gray);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .organic-badge {
+      background: rgba(76, 175, 80, 0.1);
+      color: var(--primary);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .inorganic-badge {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+      <div class="nav-icons">
+        <a href="farmer.html" class="active"><i class="fas fa-home"></i></a>
+        <a href="farmer-analytics.html"><i class="fas fa-chart-line"></i></a>
+        <a href="farmer-profile.html"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="profile-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="shop-name">Green Valley Farms</div>
+          <div class="location">Bangalore, Karnataka</div>
+        </div>
+        
+        <ul class="farmer-menu">
+          <li><a href="farmer.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="farmer-products.html"><i class="fas fa-box"></i> Products</a></li>
+          <li><a href="farmer-orders.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+          <li><a href="farmer-analytics.html"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+          <li><a href="farmer-settings.html"><i class="fas fa-store"></i> Shop Settings</a></li>
+          <li><a href="farmer-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <h2 class="section-title">Dashboard Overview</h2>
+        
+        <div class="stats-cards">
+          <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Total Products</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">18</div>
+            <div class="stat-label">Orders Today</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">₹12,450</div>
+            <div class="stat-label">Today's Revenue</div>
+          </div>
+        </div>
+
+        <div class="products-header">
+          <h3 class="section-title">Your Products</h3>
+          <button class="btn btn-primary" id="addProductBtn">Add Product</button>
+        </div>
+        
+        <table class="products-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/740/740922.png" alt="Tomato" class="product-img">
+                  <span>Tomato</span>
+                </div>
+              </td>
+              <td><span class="organic-badge">Organic</span></td>
+              <td>₹60/kg</td>
+              <td>50kg</td>
+              <td>
+                <div class="product-actions">
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn">Delete</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/2909/2909896.png" alt="Potato" class="product-img">
+                  <span>Potato</span>
+                </div>
+              </td>
+              <td><span class="inorganic-badge">Inorganic</span></td>
+              <td>₹40/kg</td>
+              <td>80kg</td>
+              <td>
+                <div class="product-actions">
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Highlight active menu item
+      const currentPage = window.location.pathname.split('/').pop();
+      const menuItems = document.querySelectorAll('.farmer-menu a');
+      
+      menuItems.forEach(item => {
+        if (item.getAttribute('href') === currentPage) {
+          item.classList.add('active');
+        }
+      });
+      
+      // Add product button functionality
+      const addProductBtn = document.getElementById('addProductBtn');
+      
+      addProductBtn.addEventListener('click', function() {
+        window.location.href = 'farmer-products.html';
+      });
+    });
+  </script>
+</body>
+</html>

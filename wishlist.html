@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --primary-dark: #3d8b40;
+      --light: #f8f9fa;
+      --dark: #333;
+      --gray: #666;
+      --light-gray: #eee;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-icons a {
+      color: var(--dark);
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .profile-container {
+      display: flex;
+      margin-top: 30px;
+      gap: 30px;
+    }
+
+    .profile-sidebar {
+      width: 250px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .profile-pic-container {
+      position: relative;
+      width: 120px;
+      margin: 0 auto 20px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .edit-pic {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: var(--primary);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .profile-name {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .profile-email {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .profile-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .profile-menu li {
+      margin-bottom: 8px;
+    }
+
+    .profile-menu a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: var(--dark);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+
+    .profile-menu a:hover, .profile-menu a.active {
+      background-color: rgba(76, 175, 80, 0.1);
+      color: var(--primary);
+    }
+
+    .profile-menu i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .profile-content {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--light-gray);
+      font-weight: 600;
+    }
+
+    .profile-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info-group {
+      margin-bottom: 15px;
+    }
+
+    .info-label {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .info-input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var(--light-gray);
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .info-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(76, 175, 80, 0.1);
+    }
+
+    .address-section, .orders-section {
+      margin-top: 40px;
+    }
+
+    .address-card {
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .address-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .address-title {
+      font-weight: 600;
+    }
+
+    .address-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .address-actions button {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .address-details {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .default-address {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .add-address {
+      display: flex;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .add-address i {
+      margin-right: 8px;
+    }
+
+    /* Edit mode styles */
+    .edit-mode .info-value {
+      display: none;
+    }
+
+    .edit-mode .info-input {
+      display: block;
+    }
+
+    .view-mode .info-input {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+      }
+      
+      .profile-sidebar {
+        width: 100%;
+      }
+      
+      .profile-info {
+        grid-template-columns: 1fr;
+      }
+    }
+     /* Add this new style for the profile dropdown */
+     .profile-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    
+    .dropdown-content a {
+      color: var(--dark);
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: rgba(76, 175, 80, 0.1);
+      border-radius: 4px;
+    }
+    
+    .profile-dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .user-info {
+      padding: 10px;
+      border-bottom: 1px solid var(--light-gray);
+      margin-bottom: 5px;
+    }
+    
+    .user-name {
+      font-weight: 600;
+    }
+    
+    .user-email {
+      font-size: 12px;
+      color: var(--gray);
+    }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="AgroShield Logo" class="logo">
+          <div class="nav-icons">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <div class="profile-dropdown">
+              <a href="profile.html"><i class="fas fa-user"></i></a>
+              <div class="dropdown-content">
+                <div class="user-info">
+                  <div class="user-name" id="dropdownUserName">John Doe</div>
+                  <div class="user-email" id="dropdownUserEmail">john.doe@example.com</div>
+                </div>
+                <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="profile-container">
+          <div class="profile-sidebar">
+            <div class="profile-pic-container">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture" class="profile-pic">
+              <div class="edit-pic">
+                <i class="fas fa-camera"></i>
+              </div>
+            </div>
+            <h2 class="profile-name">John Doe</h2>
+            <p class="profile-email">john.doe@example.com</p>
+            
+            <ul class="profile-menu">
+              <li><a href="profile.html" class="active"><i class="fas fa-user"></i> My Profile</a></li>
+              <li><a href="delivery-address.html"><i class="fas fa-map-marker-alt"></i> Delivery Address</a></li>
+              <li><a href="my-orders.html"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+              <li><a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+              <li><a href="change-password.html"><i class="fas fa-lock"></i> Change Password</a></li>
+            </ul>
+          </div>
+
+    <div class="profile-content">
+      <h2 class="section-title">My Wishlist</h2>
+      
+      <div class="wishlist-items">
+        <!-- Wishlist items grid -->
+        <div class="empty-wishlist" style="text-align: center; padding: 40px 0;">
+          <i class="fas fa-heart" style="font-size: 48px; color: #ccc;"></i>
+          <p>Your wishlist is empty</p>
+          <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if user is logged in and is a customer
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const users = JSON.parse(localStorage.getItem('agroshieldUsers')) || [];
+      const user = users.find(u => u.email === currentUser?.email);
+  
+      if (!currentUser || !currentUser.loggedIn || !user || user.userType !== 'customer') {
+        window.location.href = 'login.html';
+        return;
+      }
+  
+      // Populate user data into profile
+      document.querySelectorAll('.profile-name').forEach(el => el.textContent = user.username);
+      document.querySelectorAll('.profile-email').forEach(el => el.textContent = user.email);
+      document.getElementById('dropdownUserName').textContent = user.username;
+      document.getElementById('dropdownUserEmail').textContent = user.email;
+  
+      // Field mapping
+      const fields = {
+        'Full Name': 'username',
+        'Email': 'email',
+        'Phone Number': 'phone'
+      };
+  
+      // Set values in profile display and input fields
+      document.querySelectorAll('.info-value').forEach(el => {
+        const label = el.parentElement.querySelector('.info-label').textContent.trim();
+        const fieldKey = fields[label];
+        if (fieldKey && user[fieldKey]) {
+          el.textContent = user[fieldKey];
+          const input = el.parentElement.querySelector('.info-input');
+          if (input) input.value = user[fieldKey];
+        }
+      });
+  
+      // Logout button
+      document.getElementById('logoutBtn').addEventListener('click', function (e) {
+        e.preventDefault();
+        if (currentUser) {
+          currentUser.loggedIn = false;
+          localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+        window.location.href = 'login.html';
+      });
+  
+      // Edit, Save, Cancel buttons
+      const editBtn = document.getElementById('editProfileBtn');
+      const saveBtn = document.getElementById('saveProfileBtn');
+      const cancelBtn = document.getElementById('cancelEditBtn');
+      const profileContent = document.querySelector('.profile-content');
+  
+      // Enable edit mode
+      editBtn.addEventListener('click', function () {
+        profileContent.classList.remove('view-mode');
+        profileContent.classList.add('edit-mode');
+        document.querySelector('.view-mode .action-buttons').style.display = 'none';
+        document.querySelector('.edit-mode .action-buttons').style.display = 'flex';
+      });
+  
+      // Cancel edit
+      cancelBtn.addEventListener('click', function () {
+        profileContent.classList.remove('edit-mode');
+        profileContent.classList.add('view-mode');
+        document.querySelector('.view-mode .action-buttons').style.display = 'flex';
+        document.querySelector('.edit-mode .action-buttons').style.display = 'none';
+  
+        // Reset input fields to original values
+        document.querySelectorAll('.info-input').forEach(input => {
+          const label = input.parentElement.querySelector('.info-label').textContent.trim();
+          const fieldKey = fields[label];
+          if (fieldKey && user[fieldKey]) {
+            input.value = user[fieldKey];
+          }
+        });
+      });
+  
+      // Save profile changes
+      saveBtn.addEventListener('click', function () {
+        document.querySelectorAll('.info-input').forEach(input => {
+          const label = input.parentElement.querySelector('.info-label').textContent.trim();
+          const valueField = input.parentElement.querySelector('.info-value');
+          const fieldKey = fields[label];
+  
+          if (fieldKey) {
+            valueField.textContent = input.value;
+            user[fieldKey] = input.value;
+          }
+        });
+  
+        // Save updated user data
+        const userIndex = users.findIndex(u => u.email === user.email);
+        if (userIndex !== -1) {
+          users[userIndex] = user;
+          localStorage.setItem('agroshieldUsers', JSON.stringify(users));
+        }
+  
+        // Update dropdown display name if name changed
+        document.getElementById('dropdownUserName').textContent = user.username;
+  
+        profileContent.classList.remove('edit-mode');
+        profileContent.classList.add('view-mode');
+        document.querySelector('.view-mode .action-buttons').style.display = 'flex';
+        document.querySelector('.edit-mode .action-buttons').style.display = 'none';
+  
+        alert('Profile updated successfully!');
+      });
+    });
+  </script>
+</body>
+</html>

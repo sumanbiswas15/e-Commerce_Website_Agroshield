@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruits - AgroShield</title>
+  <link rel="stylesheet" href="fruits.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html"> <!-- Link to home page -->
+      <img src="./img/arrows.png" alt="Back Button" class="back-button">
+    </a>
+    <img src="./img/logo.png" alt="AgroShield Logo">
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search for products, services, and more..." />
+  </div>
+  <div class="nav-icons">
+    <button class="login-btn">Login</button>
+    <a href="cart.html" style="position: relative;">
+      <img src="./img/cart (2).png" alt="Cart" class="nav-icon">
+      <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+    </a>
+    <img src="./img/profile.png" alt="Profile" class="nav-icon">
+  </div>
+</nav>
+  <!-- Fruits Page -->
+  <section class="fruits-page">
+    <h2>Fresh Fruits</h2>
+    <div class="fruits-grid">
+      <!-- Mango Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Mango.jpg" alt="Mango">
+        <h3>Mango (Aam) 🥭</h3>
+        <p class="price">Price Range: ₹80 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.8/5)</p>
+        <p class="description">Mangoes are known as the "King of Fruits" for their sweet, juicy flavor. They are rich in vitamins A and C, perfect for summer.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Banana Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/banana.jpg" alt="Banana">
+        <h3>Banana (Kela) 🍌</h3>
+        <p class="price">Price Range: ₹30 – ₹60 per dozen</p>
+        <p class="quantity">Typical Quantities: 6 pieces, 12 pieces</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Bananas are a great source of potassium and energy. They are perfect for a quick snack or smoothies.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Papaya Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Papaya.jpg" alt="Papaya">
+        <h3>Papaya (Papita) 🍈</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Papayas are rich in antioxidants and digestive enzymes. They are great for improving digestion and skin health.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Guava Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Guava.jpg" alt="Guava">
+        <h3>Guava (Amrud) 🍏</h3>
+        <p class="price">Price Range: ₹50 – ₹100 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.9/5)</p>
+        <p class="description">Guavas are packed with vitamin C and fiber. They are excellent for boosting immunity and digestion.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Pomegranate Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Pomegranate.jpg" alt="Pomegranate">
+        <h3>Pomegranate (Anar) 🍎</h3>
+        <p class="price">Price Range: ₹120 – ₹200 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.6/5)</p>
+        <p class="description">Pomegranates are rich in antioxidants and are known for their heart-healthy benefits. They are perfect for juices and salads.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Watermelon Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Watermelon.jpg" alt="Watermelon">
+        <h3>Watermelon (Tarbuj) 🍉</h3>
+        <p class="price">Price Range: ₹30 – ₹60 per kg</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.7/5)</p>
+        <p class="description">Watermelons are hydrating and refreshing, perfect for hot summer days. They are rich in vitamins A and C.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Muskmelon Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Muskmelon.jpg" alt="Muskmelon">
+        <h3>Muskmelon (Kharbooja) 🍈</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Muskmelons are sweet and juicy, rich in vitamins and minerals. They are great for hydration and skin health.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Coconut Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/cocout.jpg" alt="Coconut">
+        <h3>Coconut (Nariyal) 🥥</h3>
+        <p class="price">Price Range: ₹30 – ₹60 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.8/5)</p>
+        <p class="description">Coconuts are rich in healthy fats and electrolytes. They are perfect for hydration and cooking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Pineapple Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Pineapple.jpg" alt="Pineapple">
+        <h3>Pineapple (Ananas) 🍍</h3>
+        <p class="price">Price Range: ₹50 – ₹100 per piece</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Pineapples are rich in vitamin C and bromelain, which aids digestion. They are perfect for juices and desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Lemon Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/lemon.jpg" alt="Lemon">
+        <h3>Lemon (Nimbu) 🍋</h3>
+        <p class="price">Price Range: ₹80 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.9/5)</p>
+        <p class="description">Lemons are rich in vitamin C and antioxidants. They are perfect for detox drinks and cooking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Orange Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Orange.jpg" alt="Orange">
+        <h3>Orange (Santara) 🍊</h3>
+        <p class="price">Price Range: ₹80 – ₹120 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.6/5)</p>
+        <p class="description">Oranges are rich in vitamin C and fiber. They are perfect for juices and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Apple Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Apple.jpg" alt="Apple">
+        <h3>Apple (Seb) 🍎</h3>
+        <p class="price">Price Range: ₹150 – ₹250 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.7/5)</p>
+        <p class="description">Apples are rich in fiber and antioxidants. They are perfect for snacks and desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Chikoo Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Chikoo.jpg" alt="Chikoo">
+        <h3>Chikoo (Sapota) 🍈</h3>
+        <p class="price">Price Range: ₹60 – ₹100 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Chikoos are sweet and rich in fiber. They are perfect for desserts and smoothies.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Jackfruit Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Jackfruit.jpg" alt="Jackfruit">
+        <h3>Jackfruit (Kathal) 🍈</h3>
+        <p class="price">Price Range: ₹40 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 1 whole fruit</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Jackfruits are rich in fiber and vitamins. They are perfect for curries and desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Custard Apple Card -->
+      <div class="fruit-card">
+        <img src="./img/fruits/Custard Apple.jpg" alt="Custard Apple">
+        <h3>Custard Apple (Sitaphal) 🍏</h3>
+        <p class="price">Price Range: ₹100 – ₹150 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️⭐️ (4.8/5)</p>
+        <p class="description">Custard apples are sweet and rich in antioxidants. They are perfect for desserts and smoothies.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>
+        <!-- Logos Row -->
+        <div class="logo-row">
+          <img src="./img/facebook.png" alt="facebook">
+          <img src="./img/social.png" alt="instagram">
+          <img src="./img/twitter.png" alt="twitter">
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="/media">Media Coverage</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Add this script at the bottom of fruits.html, just before the closing </body> tag -->
+  <script src="script.js"></script>
+</body>
+</html>

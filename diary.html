@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Products - AgroShield</title>
+  <link rel="stylesheet" href="diary.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"> <!-- Link to home page -->
+        <img src="./img/arrows.png" alt="Back Button" class="back-button">
+      </a>
+      <img src="./img/logo.png" alt="AgroShield Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, services, and more..." />
+    </div>
+    <div class="nav-icons">
+      <button class="login-btn">Login</button>
+      <a href="cart.html" style="position: relative;">
+        <img src="./img/cart (2).png" alt="Cart" class="nav-icon">
+        <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+      </a>
+      <img src="./img/profile.png" alt="Profile" class="nav-icon">
+    </div>
+  </nav>
+
+  <!-- Dairy Products Page -->
+  <section class="dairy-page">
+    <h2>Fresh Dairy Products</h2>
+    <div class="dairy-grid">
+      <!-- Milk Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Milk.jpg" alt="Milk">
+        <h3>Milk (Doodh) 🥛</h3>
+        <p class="price">Price Range: ₹40 – ₹70 per liter</p>
+        <p class="quantity">Typical Quantities: 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Fresh and pure milk, rich in calcium and essential nutrients.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Curd Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Curd.jpg" alt="Curd">
+        <h3>Curd (Dahi) 🥣</h3>
+        <p class="price">Price Range: ₹50 – ₹80 per kg</p>
+        <p class="quantity">Typical Quantities: 250g, 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Fresh and creamy curd, perfect for snacks and cooking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Paneer Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Paneer.jpg" alt="Paneer">
+        <h3>Paneer (Cottage Cheese) 🧀</h3>
+        <p class="price">Price Range: ₹250 – ₹350 per kg</p>
+        <p class="quantity">Typical Quantities: 200g, 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Fresh and soft paneer, ideal for curries and snacks.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Butter Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Butter.jpg" alt="Butter">
+        <h3>Butter (Makkhan) 🧈</h3>
+        <p class="price">Price Range: ₹450 – ₹600 per kg</p>
+        <p class="quantity">Typical Quantities: 100g, 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Pure and creamy butter, perfect for cooking and baking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Ghee Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Ghee.jpg" alt="Ghee">
+        <h3>Ghee (Clarified Butter)</h3>
+        <p class="price">Price Range: ₹500 – ₹700 per liter</p>
+        <p class="quantity">Typical Quantities: 250ml, 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">Pure and aromatic ghee, ideal for cooking and traditional dishes.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Cheese Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Cheese.jpg" alt="Cheese">
+        <h3>Cheese (Processed Cheese)</h3>
+        <p class="price">Price Range: ₹400 – ₹700 per kg</p>
+        <p class="quantity">Typical Quantities: 200g, 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Fresh and delicious cheese, perfect for pizzas and sandwiches.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Lassi Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Lassi.jpg" alt="Lassi">
+        <h3>Lassi (Sweet/Salty Buttermilk)</h3>
+        <p class="price">Price Range: ₹20 – ₹50 per 500ml</p>
+        <p class="quantity">Typical Quantities: 250ml, 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Refreshing and creamy lassi, perfect for summers.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Chaas Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Chaas.jpg" alt="Chaas">
+        <h3>Chaas (Spiced Buttermilk) 🥤</h3>
+        <p class="price">Price Range: ₹15 – ₹40 per 500ml</p>
+        <p class="quantity">Typical Quantities: 250ml, 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Spicy and refreshing chaas, perfect for digestion.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Khoya Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Khoya.jpg" alt="Khoya">
+        <h3>Khoya (Mawa) 🍯</h3>
+        <p class="price">Price Range: ₹300 – ₹500 per kg</p>
+        <p class="quantity">Typical Quantities: 250g, 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Rich and creamy khoya, perfect for sweets and desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Malai Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Malai.jpg" alt="Malai">
+        <h3>Malai (Fresh Cream) 🍶</h3>
+        <p class="price">Price Range: ₹80 – ₹150 per liter</p>
+        <p class="quantity">Typical Quantities: 200ml, 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.1/5)</p>
+        <p class="description">Fresh and creamy malai, perfect for desserts and cooking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Condensed Milk Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Condensed Milk.jpg" alt="Condensed Milk">
+        <h3>Condensed Milk (Sweet) 🍶</h3>
+        <p class="price">Price Range: ₹100 – ₹200 per 400g</p>
+        <p class="quantity">Typical Quantities: 200g, 400g</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0/5)</p>
+        <p class="description">Sweet and creamy condensed milk, perfect for desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Yogurt Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Yogurt.jpg" alt="Yogurt">
+        <h3>Yogurt (Flavored/Greek Yogurt) </h3>
+        <p class="price">Price Range: ₹40 – ₹100 per 200g</p>
+        <p class="quantity">Typical Quantities: 100g, 200g, 500g</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.3/5)</p>
+        <p class="description">Creamy and delicious yogurt, perfect for snacks and desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Whey Protein Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Whey Protein.jpg" alt="Whey Protein">
+        <h3>Whey Protein (Dairy-based) 💪</h3>
+        <p class="price">Price Range: ₹1000 – ₹2500 per kg</p>
+        <p class="quantity">Typical Quantities: 500g, 1kg</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5/5)</p>
+        <p class="description">High-quality whey protein, perfect for fitness enthusiasts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Fresh Cream Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/Fresh Buffalo Cream.jpg" alt="Fresh Cream">
+        <h3>Fresh Cow/Buffalo Cream 🥛</h3>
+        <p class="price">Price Range: ₹120 – ₹200 per liter</p>
+        <p class="quantity">Typical Quantities: 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.2/5)</p>
+        <p class="description">Fresh and rich cream, perfect for desserts and cooking.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Ice Cream Card -->
+      <div class="dairy-card">
+        <img src="./img/Diary/ICE creeme.jpg" alt="Ice Cream">
+        <h3>Ice Cream (Dairy-based) 🍨</h3>
+        <p class="price">Price Range: ₹100 – ₹500 per liter</p>
+        <p class="quantity">Typical Quantities: 100ml, 500ml, 1L</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.4/5)</p>
+        <p class="description">Creamy and delicious ice cream, perfect for desserts.</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>support@agroshield.in</p>
+        <p>+91-7255882705</p>
+        <!-- Logos Row -->
+        <div class="logo-row">
+          <img src="./img/facebook.png" alt="facebook">
+          <img src="./img/social.png" alt="instagram">
+          <img src="./img/twitter.png" alt="twitter">
+        </div>
+      </div>
+
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="/media">Media Coverage</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For You Section -->
+      <div class="footer-section">
+        <h3>For You</h3>
+        <ul>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms And Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

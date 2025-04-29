@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logout - AgroShield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f6f9fc;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .logout-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+
+    .logout-box h2 {
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+
+    .logout-box p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #43a047;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-box">
+    <h2>You've been logged out</h2>
+    <p>Thank you for using AgroShield.</p>
+    <a href="login.html" class="btn">Go to Login</a>
+  </div>
+
+  <script>
+    // Auto redirect to login after 5 seconds
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 5000);
+  </script>
+</body>
+</html>
